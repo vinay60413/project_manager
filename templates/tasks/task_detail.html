@@ -25,6 +25,7 @@
     <p>Due date: {{ task.due_date }}</p>
     <p>Completed: {{ task.completed }}</p>
     {% comment %} <a href="{% url 'chat' %}">>Go to Chats1</a> {% endcomment %}
+    <a href="{% url 'complete' task.id %}">Mark completed</a><br /><br />
     <a href="http://127.0.0.1:8000/projects/chat/">Go to Chats</a><br /><br />
     </div>
 </body>

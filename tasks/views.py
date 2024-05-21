@@ -3,6 +3,10 @@ from .models import Project, Task
 from .forms import ProjectForm, TaskForm
 from django.contrib.auth.decorators import login_required
 
+from rest_framework import viewsets, permissions
+from .models import ChatMessage
+from .serializers import ChatMessageSerializer
+
 @login_required
 def project_list(request):
     projects = Project.objects.all()
@@ -17,7 +21,7 @@ def project_detail(request, project_id):
 @login_required
 def task_detail(request, task_id):
     task = get_object_or_404(Task, pk=task_id)
-    return render(request, 'tasks/task_detail.html', {'task': task})
+    return render(request, 'tasks/task_detail.html', {'task': task, 'project_id':1})
 
 @login_required
 def add_project(request):
@@ -44,6 +48,22 @@ def add_task(request, project_id):
         form = TaskForm()
     return render(request, 'tasks/task_form.html', {'form': form, 'project': project})
 
+
+@login_required
+def delete_task(request, task_id):
+    if request.method == 'GET': #needs to convert it into DELETE future implementation
+            obj_instance = Task.objects.get(id=task_id)
+            print("----------------------")
+            print(obj_instance.delete())
+            print(obj_instance.save(),"saved")
+            print("task deleted successfully")
+            projects = Project.objects.all()
+            return render(request, 'tasks/project_list.html', {'projects': projects})
+    else:
+        print("task not deleted")
+        projects = Project.objects.all()
+        return render(request, 'tasks/project_list.html', {'projects': projects})
+
 @login_required
 def chatroom(request, task_id):
     return render(request, 'chatroom.html', {
@@ -51,10 +71,6 @@ def chatroom(request, task_id):
         'username': request.user.username
     })
 
-
-from rest_framework import viewsets, permissions
-from .models import Project, Task, ChatMessage
-from .serializers import ChatMessageSerializer
     
 class ChatMessageViewSet(viewsets.ModelViewSet):
     queryset = ChatMessage.objects.all()

@@ -19,18 +19,27 @@ Follow these steps to install the Application:
 - run `Scripts\activate` in windows and other operating system
 - run `sh Scripts\activate.sh` in ubuntu
 - run `python -m pip install -r .\requirements.txt`
+- run `python manage.py createsuperuser` This will prompts for superuser details
+- run `python manage.py makemigrations` 
+- run `python manage.py migrate` 
 - run `python manage.py runserver`
+
 
 ## 3. Configuration
 
 Edit the `project_manager/settings.py` file to set up the Application
 Before running the script, change the below variables <br>
 `DEBUG = False` <br>
-In templates/tasks/task_detail.html replce http://127.0.0.1:8000/ with the particular domain name
+In templates/tasks/task_detail.html replce http://127.0.0.1:8000/ with the particular domain URL
 
 ## 4. Usage
 
-### run instruction
+- [Endpoints](#endpoints)
+  - [List All Items](#list-all-items)
+  - [Get Item by ID](#get-item-by-id)
+  - [Create New Item](#create-new-item)
+  - [Update Item](#update-item)
+  - [Delete Item](#delete-item)
 
 
 
