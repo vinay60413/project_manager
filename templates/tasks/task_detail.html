@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ task.title }}</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .header {
+          padding: 60px 100px;
+          text-align: left;
+          background: #1abc9c;
+          color: white;
+          font-size: 30px;
+        }
+        .content {
+          padding: 20px;
+          background-color: #1abc9c;
+        }
+      </style>
+</head>
+<body>
+    <div style="display:flex;justify-content:flex-start;flex-direction:column;align-items:center; background-color:grey;">
+    <h1 class="header">Task: {{ task.title }}</h1>
+    <p>{{ task.description }}</p>
+    <p>Assigned to: {{ task.assigned_to }}</p>
+    <p>Due date: {{ task.due_date }}</p>
+    <p>Completed: {{ task.completed }}</p>
+    {% comment %} <a href="{% url 'chat' %}">>Go to Chats1</a> {% endcomment %}
+    <a href="http://127.0.0.1:8000/projects/chat/">Go to Chats</a><br /><br />
+    </div>
+</body>
+</html>

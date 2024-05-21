@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Projects</title>
+    <style>
+      .header {
+        padding: 60px 100px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+        width: 100%;
+      }
+      .content {
+        padding: 20px;
+        background-color: #1abc9c;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display:flex;justify-content:center;flex-direction:column;align-items:center; background-color:grey;">
+      <div style="margin-bottom: 20px;">
+        <h1 class="header">Projects</h1>
+        <ul class="content">
+          {% for project in projects %}
+            <li>
+              <a href="{% url 'project_detail' project.id %}">{{ project.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        <a style="justify-self: center;" href="{% url 'add_project' %}">Add New Project</a><br /><br />
+        <nav>
+          <!-- Other navigation links -->
+          {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+          {% else %}
+            <a href="{% url 'login' %}">Login</a>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>
