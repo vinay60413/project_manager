@@ -34,12 +34,15 @@ In templates/tasks/task_detail.html replce http://127.0.0.1:8000/ with the parti
 
 ## 4. Usage
 
-- [Endpoints](#endpoints)
-  - [List All Items](#list-all-items)
-  - [Get Item by ID](#get-item-by-id)
-  - [Create New Item](#create-new-item)
-  - [Update Item](#update-item)
-  - [Delete Item](#delete-item)
+- [Endpoints](#endpoints) <br/>
+  These endpoints allow you to handle project manager app.
+  - `List all projects` [/projects/](#projects)<br/>
+  - `Add a project` [/projects/add_project/](#projects)<br/>
+  - `Details of a particular project` [/projects/<int:project_id>/](#projects/1)<br/>
+  - `Add a task` [/projects/project/<int:project_id>/add_task/](#projects/1)<br/>
+  - `Task detail` [/projects/task/<int:task_id>/](#projects)<br/>
+  - `Remove Task` [/projects/task/<int:task_id>/complete/](#projects)<br/>
+  - `chats` [/projects/chat/](#projects)<br/>
 
 
 
