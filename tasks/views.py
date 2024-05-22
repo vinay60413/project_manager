@@ -55,7 +55,6 @@ def delete_task(request, task_id):
             obj_instance = Task.objects.get(id=task_id)
             print("----------------------")
             print(obj_instance.delete())
-            print(obj_instance.save(),"saved")
             print("task deleted successfully")
             projects = Project.objects.all()
             return render(request, 'tasks/project_list.html', {'projects': projects})
