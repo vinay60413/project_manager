@@ -49,4 +49,5 @@ In templates/tasks/task_detail.html replce http://127.0.0.1:8000/ with the parti
 ## 5. Recent changes made in Repository are: 
 <ol>
     <li>Initial setup completed.</li>
+    <li>End points listing.</li>
 </ol>
