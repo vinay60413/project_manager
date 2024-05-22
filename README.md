@@ -5,7 +5,7 @@
 The application will allow team members with appropriate permission to create, update, and delete tasks on a to-do list
 
 ### Purpose
-This documentation serves as a guide for developers and administrators to understand, integrate, and use the MO-fail data extractor script.
+This documentation serves as a guide for developers and administrators to understand, integrate, and use this application.
 
 ## 2. Getting Started
 ### Prerequisites
